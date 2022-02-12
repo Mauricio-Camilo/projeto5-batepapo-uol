@@ -1,20 +1,18 @@
-// let mensagens = [{ from: "diego", to: "todos", texto: "e ae galera!", time: "(12:00:00)", type: "status", text: "entra na sala..." },
-// { from: "ana", to: "diego", texto: "e ae professor!", time: "(13:00:00)", type: "message", text: "E ai galera blz?" },
-// { from: "nathan", to: "diego", texto: "fala professor!", time: "(14:00:00)", type: "private_message", text: "mensagem privada" }];
 let mensagensServidor = [];
 let usuarioEnviado = [];
 
-function receberNomeUsuario () {
-    const nomeUsuario = prompt ("Digite seu nome para entrar na sala:");
-    usuarioEnviado = [{name: "Mau"}];
-    console.log (usuarioEnviado);
-    const nomeEnviadoServidor = axios.post ("https://mock-api.driven.com.br/api/v4/uol/participants",nomeUsuario)
-    nomeEnviadoServidor.then(enviarNomeCorreto);
-   // nomeEnviadoServidor.catch(tratarErro);
+function receberNomeUsuario() {
+    const nomeUsuario = prompt("Digite seu nome para entrar na sala:");
+    // usuario = [{name: nomeUsuario}];
+    // console.log(usuario[0].name);
+    const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/participants",nomeUsuario);
+    // Fazer um loop até aceitar o nome do usuário
+    promise.then(enviarNomeCorreto);
+    promise.catch(tratarErro);
 }
 
-function enviarNomeCorreto () {
-    console.log ("Envio correto");
+function enviarNomeCorreto(nomeEnviado) {
+    console.log(nomeEnviado);
 }
 
 function carregarMensagensDoServidor() {
@@ -29,10 +27,9 @@ function cumprirPromessa(resposta) {
     //console.log (mensagensServidor);
 }
 
-function tratarErro (erro) {
-    console.log ("Erro");
-    console.log (erro.response.status);
-    console.log (erro.response.data);
+function tratarErro(erro) {
+    console.log(erro.response.status); //400
+    console.log(erro.response.data);
 }
 
 function mostrarMensagensNaTela() {
@@ -59,5 +56,5 @@ function mostrarMensagensNaTela() {
 
 receberNomeUsuario();
 
-setInterval(carregarMensagensDoServidor,3000)
+setInterval(carregarMensagensDoServidor, 3000)
 
