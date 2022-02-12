@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #E5E5E5;
+}
+
+
+
+header {
+    background-color: white;
+    width: 100%; 
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.icone-uol {
+    width: 75px;
+    height: 53px;
+    /*  margin-top: 16px;
+    margin-bottom: 11px;*/
+    margin-left: 22px;
+}
+
+.icone-preto {
+    width: 42px;
+    height: 30px;
+    margin-right: 22px;
+}
+
+main {
+    margin: 106px 0;
+}
+
+span {
+    font-weight: 400;}
+
+.tempo {
+    color: blue;
+}
+
+.exibição {
+    height: 40px;
+    margin-top: 4px;
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.entrada-saida {
+    background-color: gray;
+}
+
+.mensagem {
+    background-color: white;
+}
+
+.reservada {
+    background-color: pink;
+}
+
+main p {
+    font-family: roboto;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+ b {
+    font-weight:bold;
+}
+
+
+footer {
+    background-color: white;
+    width: 100%; 
+    height: 80px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+footer p {
+    font-family: roboto;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 18px;
+    margin-left: 17px;
+}
+
+.footer-icone {
+    font-size: 26px;
+    margin-right: 18px;
+}
