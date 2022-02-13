@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,17 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="estilos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+    <div class="login">
+        <img class="icone-uol" src="./Figuras/logo 1.png">
+        <input class="login-nome" type="text" placeholder="Digite seu nome" name="" id="">
+        <button class="botao" onclick="EsconderTelaLogin()">Entrar</button>
+    </div>
     <header>
         <img class="icone-uol" src="./Figuras/logo 1.png">
         <img class="icone-preto" src="./Figuras/Vector.png">
@@ -31,11 +39,15 @@
         </div> -->
     </main>
     <footer>
-        <p>Escreva aqui... (colocar input)</p>
-        <ion-icon class="footer-icone" name="paper-plane-outline"></ion-icon>
+        <input class="box-mensagem enviar-mensagem" type="text" placeholder="Escreva aqui..." name="" id="">
+        <div onclick="digitarMensagem()">
+            <ion-icon class="footer-icone" name="paper-plane-outline">
+            </ion-icon>
+        </div>
     </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="scripts.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
+
 </html>

@@ -1,18 +1,23 @@
 let mensagensServidor = [];
 let usuarioEnviado = [];
 
-function receberNomeUsuario() {
-    const nomeUsuario = prompt("Digite seu nome para entrar na sala:");
-    // usuario = [{name: nomeUsuario}];
-    // console.log(usuario[0].name);
-    const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/participants",nomeUsuario);
-    // Fazer um loop até aceitar o nome do usuário
-    promise.then(enviarNomeCorreto);
-    promise.catch(tratarErro);
-}
+// function receberNomeUsuario() {
+//     const nomeUsuario = prompt("Digite seu nome para entrar na sala:");
+//     // usuario = [{name: nomeUsuario}];
+//     // console.log(usuario[0].name);
+//     const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/participants",nomeUsuario);
+//     // Fazer um loop até aceitar o nome do usuário
+//     promise.then(enviarNomeCorreto);
+//     promise.catch(tratarErro);
+// }
 
 function enviarNomeCorreto(nomeEnviado) {
     console.log(nomeEnviado);
+}
+
+function EsconderTelaLogin() {
+    const ocultarLogin = document.querySelector(".login");
+    ocultarLogin.classList.add("escondido")
 }
 
 function carregarMensagensDoServidor() {
@@ -39,7 +44,7 @@ function mostrarMensagensNaTela() {
         let texto = mensagensServidor[i];
         if (texto.type === "status") {
             mensagem.innerHTML += `<div class="entrada-saida exibição">
-        <p><span class="tempo">(${texto.time})</span> <b> ${texto.from} </b> <span>  ${texto.text} </span></p>
+        <p><span class="tempo">(${texto.time})   </span> <b> ${texto.from} </b> <span>  ${texto.text} </span></p>
     </div>`
         }
         else if (texto.type === "message") {
@@ -53,8 +58,21 @@ function mostrarMensagensNaTela() {
     }
 }
 
+function digitarMensagem () {
+    const mensagemDigitada = document.querySelector(".enviar-mensagem")
+    const mensagemEnviada = mensagemDigitada.value;
+    console.log (mensagemEnviada);
+    const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages", mensagemEnviada);
+    promise.then (mensagemEnviadaOK);
+    promise.catch (tratarErro)
+}
 
-receberNomeUsuario();
+function mensagemEnviadaOK () {
+    console.log ("sucesso");
+}
 
-setInterval(carregarMensagensDoServidor, 3000)
+
+// receberNomeUsuario();
+
+setInterval(carregarMensagensDoServidor, 1000)
 
