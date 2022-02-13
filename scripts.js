@@ -1,18 +1,28 @@
 let mensagensServidor = [];
 let usuarioEnviado = [];
+let teste = ""
 
-// function receberNomeUsuario() {
-//     const nomeUsuario = prompt("Digite seu nome para entrar na sala:");
-//     // usuario = [{name: nomeUsuario}];
-//     // console.log(usuario[0].name);
-//     const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/participants",nomeUsuario);
-//     // Fazer um loop até aceitar o nome do usuário
-//     promise.then(enviarNomeCorreto);
-//     promise.catch(tratarErro);
+function receberNomeUsuario() {
+   
+    // while (statusServidor !== 200) {
+    const nomeUsuario = prompt("Digite seu nome para entrar na sala:");
+    const usuario = {name: nomeUsuario};
+  //  console.log(usuario);
+    const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/participants",usuario);
+    // Fazer um loop até aceitar o nome do usuário
+    promise.then(enviarNomeCorreto);
+    promise.catch(tratarErro);
+
 // }
+}
 
 function enviarNomeCorreto(nomeEnviado) {
-    console.log(nomeEnviado);
+    teste = nomeEnviado.status;
+    console.log(teste);
+    while (teste !== 200) {
+        prompt ("Nome inválido, digite outro nome:");
+        receberNomeUsuario();
+    }
 }
 
 function EsconderTelaLogin() {
@@ -72,7 +82,7 @@ function mensagemEnviadaOK () {
 }
 
 
-// receberNomeUsuario();
+ receberNomeUsuario();
 
 setInterval(carregarMensagensDoServidor, 1000)
 
