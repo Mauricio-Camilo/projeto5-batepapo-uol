@@ -15,24 +15,31 @@
 </head>
 
 <body>
-    <div class="login escondido">
-        <img class="icone-uol" src="./Figuras/logo 1.png">
-        <input class="login-nome" type="text" placeholder="Digite seu nome" name="" id="">
-        <button class="botao" onclick="EsconderTelaLogin()">Entrar</button>
-    </div>
+
+    <!-- Topo da página  -->
+
     <header>
         <img class="icone-uol" src="./Figuras/logo 1.png">
         <img class="icone-preto" src="./Figuras/Vector.png">
     </header>
+
+    <!-- Conteúdo da página que será carregado via JavaScript  -->
+
     <main>
     </main>
+
+    <!-- Caixa de digitar e enviar mensagens  -->
+
     <footer>
         <input class="box-mensagem enviar-mensagem" type="text" placeholder="Escreva aqui..." name="" id="">
-        <div onclick="digitarMensagem()">
+        <div onclick="digitarMensagem()" data-identifier="send-message">
             <ion-icon class="footer-icone" name="paper-plane-outline">
             </ion-icon>
         </div>
     </footer>
+
+    <!-- Inserção dos scripts  -->
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="scripts.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
