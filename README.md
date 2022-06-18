@@ -4,7 +4,7 @@ Talk to your friends using one of the oldest and most famous chats that ever exi
 
 ## About
 
-In this application that allows you to chat with lots of people by the use of an API. Below are the implemented features:
+This application allows you to chat with lots of people by the use of an API. Below are the implemented features:
 
 - Send messages
 - Receive messages
